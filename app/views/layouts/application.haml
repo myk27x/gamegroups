@@ -1,13 +1,25 @@
 !!!5
 %html
-%head
-  %title Gamegroups
-  = stylesheet_link_tag    'application', media: 'all'
-  = javascript_include_tag 'application'
-  = csrf_meta_tags
+  %head
+    %title Gamegroups
+    = stylesheet_link_tag    'application', media: 'all'
+    = javascript_include_tag 'application'
+    = csrf_meta_tags
 
-%body
-  %p.notice= notice
-  %p.alert = alert
+  %body
+    #header
+      #navbar
+        = link_to 'HOME', root_path
+        #login
+          - if !current_player
+            = link_to 'SIGN-IN', new_player_session_path
+            \/
+            = link_to 'SIGN-UP', new_player_registration_path
+          - else
+            = current_player.email
+            = link_to 'SIGN-OUT', destroy_player_session_path, method: :delete
+      #tell
+        .notice= notice
+        .alert= alert
 
-  = yield
+    = yield
