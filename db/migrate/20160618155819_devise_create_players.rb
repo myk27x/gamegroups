@@ -2,12 +2,12 @@ class DeviseCreatePlayers < ActiveRecord::Migration
   def change
     create_table(:players) do |t|
       ## manual entries for players table
-      t.string :first_name
-      t.string :last_name
-      t.string :user_name,          null: false
+      t.string   :first_name
+      t.string   :last_name
       t.datetime :date_of_birth
 
       ## Database authenticatable
+      t.string :user_name,          null: false
       t.string :email,              null: false
       t.string :encrypted_password, null: false
 
