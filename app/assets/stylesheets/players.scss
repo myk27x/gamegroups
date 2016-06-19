@@ -1,0 +1,20 @@
+// Place all the styles related to the players controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#player {
+  margin: 20px;
+  display: inline-flex;
+  background: pink;
+
+  #image {
+    width: 200px;
+    height: 200px;
+    background: red;
+  }
+
+  #info {
+    display: block;
+    background: blue;
+  }
+}
