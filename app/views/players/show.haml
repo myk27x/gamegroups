@@ -1,5 +1,10 @@
 #player
-  #image
+  #image USER IMAGE
   #info
-    .name= @player.user_name
-    .email= @player.email
+    .info= @player.user_name
+    .info= @player.first_name
+    .info= @player.last_name
+    .info= @player.email
+    .info= @dob
+
+    = link_to 'EDIT', edit_player_path
