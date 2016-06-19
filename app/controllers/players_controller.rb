@@ -3,6 +3,9 @@ class PlayersController < ApplicationController
   before_action :set_player
 
   def show
+    if @player.date_of_birth != nil
+      @dob = @player.parse(@player.date_of_birth)
+    end
   end
 
   def edit
@@ -27,7 +30,7 @@ private
   end
 
   def player_params
-    params.require(:players).permit(:first_name, :last_name, :date_of_birth)
+    params.require(:player).permit(:first_name, :last_name, :date_of_birth)
   end
 
 end
