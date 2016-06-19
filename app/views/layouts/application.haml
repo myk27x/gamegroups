@@ -16,7 +16,7 @@
             \/
             = link_to 'SIGN-UP', new_player_registration_path
           - else
-            = current_player.email
+            = link_to current_player.user_name, players_path(current_player)
             = link_to 'SIGN-OUT', destroy_player_session_path, method: :delete
       #tell
         .notice= notice
