@@ -1,0 +1,19 @@
+= form_for @player do |f|
+
+  .field
+    = f.label :first_name
+    %br
+    = f.text_field :first_name
+
+  .field
+    = f.label :last_name
+    %br
+    = f.text_field :last_name
+
+  .field
+    = f.label :date_of_birth
+    %br
+    = f.date_field :date_of_birth
+
+  .actions
+    = f.submit "UPDATE"

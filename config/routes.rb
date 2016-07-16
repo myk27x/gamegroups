@@ -1,4 +1,16 @@
 Rails.application.routes.draw do
+
+  devise_for :players, controllers: {registrations: 'registrations'}
+
+  controller :players do
+    get    'players/:id',      to: 'players#show',    as: 'player'
+    get    'players/:id/edit', to: 'players#edit',    as: 'edit_player'
+    patch  'players/:id',      to: 'players#update',  as: 'update_player'
+    delete 'players/:id',      to: 'players#destroy', as: 'delete_player'
+  end
+
+  root to: 'home#index'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
